@@ -1,0 +1,1 @@
+export const LOGO_URL = 'https://cdn3d.iconscout.com/3d/free/thumb/free-snapchat-7412247-6068063.png?f=webp'

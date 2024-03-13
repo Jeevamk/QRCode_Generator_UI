@@ -7,10 +7,10 @@ import SignUp from "./components/SignUp";
 function App() {
   return (
     <Router>
-      <div>
+      <div className="justify-center items-center h-vh">
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/Login" element={<Login />} />
+          {/* <Route path="/Login" element={<Login />} /> */}
           <Route path="/SignUp" element={<SignUp />} />
         </Routes>
       </div>
