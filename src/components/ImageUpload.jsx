@@ -1,9 +1,12 @@
 
 import { useState } from "react";
 import axios from "axios";
+import QRCode from 'react-qr-code'
 
 function ImageUpload() {
   const [selectedImages, setSelectedImages] = useState([]);
+  const [qrData, setQrData] = useState(null);
+
 
   const handleImageChange = (e) => {
     const files = e.target.files;
@@ -33,6 +36,14 @@ function ImageUpload() {
       });
 
       console.log("Images uploaded successfully:", response.data);
+      console.log('response.data',response.data);
+      const userId = response.data._id;
+      console.log('userid',userId);
+      const imageDetails = response.data.images;
+      console.log('images',imageDetails);
+      const qrData = JSON.stringify({userId,imageDetails})
+      setQrData(qrData);
+
     } catch (error) {
       console.error("Error uploading images:", error);
     }
@@ -55,6 +66,12 @@ function ImageUpload() {
           />
           <button type="submit" className="w-full px-4 py-2 text-white bg-black rounded-md hover:bg-black-600 focus:outline-none focus:bg-black-600"> Upload Images </button>
         </form>
+        {qrData && (
+            <div className="mt-4">
+            <h2 className="text-xl font-bold mb-2">QR Code:</h2>
+            <QRCode value={qrData} />
+          </div>
+        )}
       </div>
     </div>
   );
