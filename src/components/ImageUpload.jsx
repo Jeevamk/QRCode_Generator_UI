@@ -2,7 +2,6 @@
 import { useState } from "react";
 import axios from "axios";
 import QRCode from 'react-qr-code';
-import { QRCodeDownload } from 'react-qrcode-download';
 
 
 function ImageUpload() {
@@ -68,7 +67,6 @@ function ImageUpload() {
           <div className="mt-4 justify-center text-center shadow-lg w-36">
             <h2 className="text-xl font-bold mb-2">QR Code:</h2>
             <QRCode value={`https://qr-code-generator-ui.vercel.app/${qrData}`}/>
-            <QRCodeDownload value={`https://qr-code-generator-ui.vercel.app/${qrData}`} fileName={`qr-${qrData}.png`} />
 
           </div>
         )}

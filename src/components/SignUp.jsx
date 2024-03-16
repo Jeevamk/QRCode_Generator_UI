@@ -4,8 +4,7 @@ import axios from "axios";
 import Login from "./Login";
 import ImageUpload from "./ImageUpload";
 import { Link } from "react-router-dom";
-import { LOGO_URL } from "../utils/constats/images"; // import your logo file
-
+import { LOGO_URL } from "../utils/constats/images"; 
 const SignUp = () => {
   const [formData, setFormData] = useState({
     name: "",
