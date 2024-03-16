@@ -11,7 +11,7 @@ function App() {
       <div className="justify-center items-center h-vh">
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/Login" element={<Login />} />
+          {/* <Route path="/Login" element={<Login />} /> */}
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/:userId" element = {<ImageShow />} />
         </Routes>
