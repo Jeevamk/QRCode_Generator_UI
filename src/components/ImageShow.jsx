@@ -12,7 +12,7 @@ const ImageShow =  () => {
     const fetchData =async ()=>{
         try {
             const response = await axios.get(
-              `http://localhost:3010/user/images/${userId}`,
+              `https://qr-code-generator-api-tau.vercel.app/user/images/${userId}`,
             );
             const img= response.data;
             console.log('img',img);
