@@ -25,7 +25,7 @@ const SignUp = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3010/user",
+        "https://qr-code-generator-api-tau.vercel.app/user",
         formData
       );
       console.log(response.data.message);

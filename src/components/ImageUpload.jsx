@@ -19,16 +19,16 @@ function ImageUpload() {
       console.log("No images selected.");
       return;
     }
-
+    const images = selectedImages
     const formData = new FormData();
-    selectedImages.forEach((image) => {
+    images.forEach((image) => {
       formData.append("images", image);
     });
 
     try {
       const userToken = sessionStorage.getItem('token');
       console.log(userToken)
-      const response = await axios.post("http://localhost:3010/user/imageupload", formData, {
+      const response = await axios.post("https://qr-code-generator-api-tau.vercel.app/user/imageupload", formData, {
         headers: {
             "Content-Type": "multipart/form-data",
             auth: `${userToken}`
@@ -36,13 +36,9 @@ function ImageUpload() {
       });
 
       console.log("Images uploaded successfully:", response.data);
-      console.log('response.data',response.data);
-      const userId = response.data._id;
+      const userId = response.data.userId;
       console.log('userid',userId);
-      const imageDetails = response.data.images;
-      console.log('images',imageDetails);
-      const qrData = JSON.stringify({userId,imageDetails})
-      setQrData(qrData);
+      setQrData(userId);
 
     } catch (error) {
       console.error("Error uploading images:", error);
@@ -67,9 +63,9 @@ function ImageUpload() {
           <button type="submit" className="w-full px-4 py-2 text-white bg-black rounded-md hover:bg-black-600 focus:outline-none focus:bg-black-600"> Upload Images </button>
         </form>
         {qrData && (
-            <div className="mt-4">
+          <div className="mt-4 justify-center text-center shadow-lg w-60">
             <h2 className="text-xl font-bold mb-2">QR Code:</h2>
-            <QRCode value={qrData} />
+            <QRCode value={`https://qr-code-generator-ui.vercel.app/${qrData}`}/>
           </div>
         )}
       </div>
