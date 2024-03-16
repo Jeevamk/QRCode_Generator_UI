@@ -1,7 +1,9 @@
 
 import { useState } from "react";
 import axios from "axios";
-import QRCode from 'react-qr-code'
+import QRCode from 'react-qr-code';
+import { QRCodeDownload } from 'react-qrcode-download';
+
 
 function ImageUpload() {
   const [selectedImages, setSelectedImages] = useState([]);
@@ -63,9 +65,11 @@ function ImageUpload() {
           <button type="submit" className="w-full px-4 py-2 text-white bg-black rounded-md hover:bg-black-600 focus:outline-none focus:bg-black-600"> Upload Images </button>
         </form>
         {qrData && (
-          <div className="mt-4 justify-center text-center shadow-lg w-60">
+          <div className="mt-4 justify-center text-center shadow-lg w-36">
             <h2 className="text-xl font-bold mb-2">QR Code:</h2>
             <QRCode value={`https://qr-code-generator-ui.vercel.app/${qrData}`}/>
+            <QRCodeDownload value={`https://qr-code-generator-ui.vercel.app/${qrData}`} fileName={`qr-${qrData}.png`} />
+
           </div>
         )}
       </div>
