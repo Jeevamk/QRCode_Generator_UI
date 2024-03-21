@@ -29,7 +29,7 @@ function ImageUpload() {
     try {
       const userToken = sessionStorage.getItem('token');
       console.log(userToken)
-      const response = await axios.post("http://localhost:3010/user/imageupload", formData, {
+      const response = await axios.post("https://qr-code-generator-api-tau.vercel.app/user/imageupload", formData, {
         headers: {
             "Content-Type": "multipart/form-data",
             auth: `${userToken}`
