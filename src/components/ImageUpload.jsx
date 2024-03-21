@@ -67,7 +67,6 @@ function ImageUpload() {
           <div className="mt-4 justify-center text-center shadow-lg w-36">
             <h2 className="text-xl font-bold mb-2">QR Code:</h2>
             <QRCode value={`https://qr-code-generator-ui.vercel.app/${qrData}`}/>
-
           </div>
         )}
       </div>

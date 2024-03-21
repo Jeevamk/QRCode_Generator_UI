@@ -35,7 +35,6 @@ function Login() {
       const token = response.data.token;
       sessionStorage.setItem("token", token);
       setToken(true);
-      console.log(response.data);
       setFormData({ email: "", password: "" });
 
     } catch (error) {
