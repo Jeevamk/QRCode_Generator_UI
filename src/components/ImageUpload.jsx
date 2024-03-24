@@ -68,10 +68,9 @@ function ImageUpload() {
           <button type="submit" className="w-full px-4 py-2 text-white bg-black rounded-md hover:bg-black-600 focus:outline-none focus:bg-black-600"> Upload Images </button>
         </form>
         
-        {/* Centered QR Code */}
         {qrData && (
           <div className="flex justify-center">
-            <div className="text-center shadow-lg w-36">
+            <div className="text-center shadow-lg w-32">
               <h2 className="text-xl font-bold mb-2">QR Code:</h2>
               <QRCode value={`https://qr-code-generator-ui.vercel.app/${qrData}`} />
             </div>
