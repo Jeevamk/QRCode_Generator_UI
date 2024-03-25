@@ -71,7 +71,7 @@ function ImageUpload() {
         {qrData && (
           <div className="flex justify-center">
             <div className="text-center shadow-lg w-32">
-              <h2 className="text-xl font-bold mb-2">QR Code</h2>
+              {/* <h2 className="text-xl font-bold mb-2">QR Code</h2> */}
               <QRCode value={`https://qr-code-generator-ui.vercel.app/${qrData}`} className="text-center" />
             </div>
           </div>
