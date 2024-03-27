@@ -76,7 +76,7 @@ function Login() {
               Sign In
             </button>
             <p className="text-sm font-sans text-gray-500 dark:text-gray-400 p-3 text-center">
-              Don't have an account? <Link to="/SignUp" className="text-black font-bold dark:text-black-400">Sign Up</Link>
+              Don't have an account? <Link to="/sign_up" className="text-black font-bold dark:text-black-400">Sign Up</Link>
             </p>
           </form>
         </div>
