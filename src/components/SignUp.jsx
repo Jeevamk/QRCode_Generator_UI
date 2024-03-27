@@ -5,6 +5,8 @@ import Login from "./Login";
 import ImageUpload from "./ImageUpload";
 import { Link } from "react-router-dom";
 import { LOGO_URL } from "../utils/constats/images"; 
+
+
 const SignUp = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -86,12 +88,6 @@ const SignUp = () => {
               className="block w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg focus:outline-none shadow-lg focus:border-black"
             />
 
-            {/* <button
-  type="submit"
-  className="w-full px-4 py-2 text-white bg-black rounded-md hover:bg-black-dark focus:outline-none focus:bg-black-dark"
->
-  Signup
-</button> */}
             <button
               type="submit"
               className="w-full px-4 py-2 text-white text-lg font-bold bg-gradient-to-r from-yellow-400 to-black rounded-lg hover:bg-gradient-to-r hover:from-yellow-500 hover:to-black focus:outline-none focus:bg-gradient-to-r focus:from-yellow-500 focus:to-black"

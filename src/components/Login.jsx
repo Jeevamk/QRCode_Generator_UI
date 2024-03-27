@@ -21,7 +21,7 @@ function Login() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [name]: value })
   };
 
   const handleSubmit = async (e) => {
@@ -40,7 +40,7 @@ function Login() {
     } catch (error) {
       console.error("Error Login user:", error.response.data.error);
     }
-    console.log("formddata:", formData);
+    console.log("formdata:", formData);
   };
 
   return (
@@ -68,12 +68,7 @@ function Login() {
               onChange={handleChange}
               className="block w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg focus:outline-none shadow-lg focus:border-black-500"
             />
-            {/* <button
-              type="submit"
-              className="w-full px-4 py-2 text-white bg-black rounded-md hover:bg-black-dark focus:outline-none focus:bg-black-dark"
-            >
-              Sign In
-            </button> */}
+           
             <button
               type="submit"
               className="w-full px-4 py-2 text-white font-bold text-lg bg-gradient-to-r from-yellow-400 to-black rounded-lg hover:bg-gradient-to-r hover:from-yellow-500 hover:to-black focus:outline-none focus:bg-gradient-to-r focus:from-yellow-500 focus:to-black"
